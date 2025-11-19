@@ -31,6 +31,10 @@
                 require 'item-cadastro.php';
                 break;
 
+            case 'item-excluir':
+                require 'item-excluir.php';
+                break;
+
             default:
                 echo "<h2>Página não encontrada!</h2>";
                 break;
