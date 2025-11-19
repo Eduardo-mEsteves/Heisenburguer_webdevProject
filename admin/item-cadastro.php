@@ -1,7 +1,7 @@
 <?php
     require_once "config.inc.php";
 
-    echo "<h1>Fazendo o seu post</h1>";
+    echo "<h1>Cadastrando seu item</h1>";
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

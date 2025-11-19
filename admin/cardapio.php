@@ -15,7 +15,7 @@
         echo "<blockquote>\"" . $dados['ingredientes'] . "\"</blockquote>";
 
         echo "<div>";
-            echo "<a>href='?pg=cardapio-altera-form&id={$dados['id']}'>Editar</a>";
+            echo "<a href='?pg=item-altera-form&id={$dados['id']}'>Editar</a> <br>";
             echo "<a href='?pg=item-excluir&id={$dados['id']}'>Excluir</a>";
         echo "</div>";
     echo "</div>";
