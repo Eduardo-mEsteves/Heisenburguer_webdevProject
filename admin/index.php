@@ -31,6 +31,14 @@
                 require 'item-cadastro.php';
                 break;
 
+            case 'item-altera':
+                require 'item-altera.php';
+                break;
+
+            case 'item-altera-form':
+                require 'item-altera-form.php';
+                break;
+
             case 'item-excluir':
                 require 'item-excluir.php';
                 break;

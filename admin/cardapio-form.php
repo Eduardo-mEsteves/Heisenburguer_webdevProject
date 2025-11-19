@@ -1,5 +1,5 @@
 <div>
-    <h2>Fazer novo post</h2>
+    <h2>Cadastrar novo item</h2>
 
     <form action="?pg=item-cadastro" method="post">
         <label for="nome">Nome:</label>

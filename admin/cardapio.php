@@ -1,4 +1,3 @@
-<link rel="stylesheet"> 
 <?php
 
     require "config.inc.php";
