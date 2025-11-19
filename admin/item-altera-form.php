@@ -17,9 +17,10 @@
 
 ?>
 <div>
-    <h2>Alteração de dados do cliente</h2>
-    <form action="?pg=post-altera" method="post">
+    <h2>Alteração de dados do item</h2>
+    <form action="?pg=item-altera" method="post">
         <input type="hidden" name="id" value="<?=$id?>">
+
         <label>Nome:</label>
         <input type="text" name="nome" value="<?=$nome?>" required><br>
 
@@ -27,12 +28,13 @@
         <input type="text" name="preco" value="<?=$preco?>" required><br>
         
         <label>ingredientes:</label>
-        <textarea name="ingredientes" required value="<?=$ingredientes?>"></textarea><br><br>
+        <textarea name="ingredientes" required><?=$ingredientes?></textarea>
+        <br><br>
         <input type="submit" value="Cadastrar">
     </form>
 </div>
 <?php
 }else{
-        echo "<br><h2>Nenhum ingrediente encontrado</h2>";
-    }
+    echo "<br><h2>Nenhum ingrediente encontrado</h2>";
+}
 ?>
