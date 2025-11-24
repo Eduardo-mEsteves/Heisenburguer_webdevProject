@@ -11,9 +11,10 @@
     $sql = "UPDATE receita SET nome = '$nome', preco = '$preco', ingredientes = '$ingredientes' WHERE id = '$id'";
 
     if($resultado = mysqli_query($conexao, $sql)){
-        echo "<br><h2>Item alterado com sucesso!</h2><br>";
-        echo "<a href='?pg=cardapio'>Voltar</a>";
+        echo "<div class='sucesso-msg'><h2>Item alterado com sucesso!</h2></div>";
+        echo "<a href='?pg=cardapio' class='botao-voltar'>Voltar</a>";
     } else {
-        echo "<br><h2>Erro ao alterar item!</h2><br>";
-        echo "<a href='?pg=cardapio'>Voltar</a>";
-    }       
+        echo "<div class='sucesso-msg'><h2>Erro ao alterar item!</h2></div>";
+        echo "<a href='?pg=cardapio' class='botao-voltar'>Voltar</a>";
+    }
+?>
