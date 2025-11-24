@@ -1,16 +1,16 @@
 
-<link rel="stylesheet" href=""> 
+<link rel="stylesheet" href="heisenburguer.css"> 
    
 <div>
     <?php
     echo "<h1>HEISENBURGUER</h1>";
     ?>
 
-    <nav>
-        <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="?pg=cardapio">Cardapio</a></li>
-        </ul>
+    <nav class="menu">
+    <ul>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="?pg=cardapio">Cardápio</a></li>
+    </ul>
     </nav>
 </div>
 
