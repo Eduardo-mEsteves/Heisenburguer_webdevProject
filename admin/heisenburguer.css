@@ -194,3 +194,141 @@ h1:hover {
     color: #0A1A10;
     transform: scale(1.05);
 }
+
+.form-box {
+    background-color: #0F3F2A;
+    color: #E9FDEB;
+    border: 2px solid #1E6B42;
+    border-radius: 6px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 0 15px #32FF7F30;
+    position: relative;
+}
+
+.form-box::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    background: #5EFF92;
+    border-radius: 2px;
+}
+
+.form-box h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 22px;
+    color: #E9FCE8;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.form-box label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+    color: #CFFFE0;
+}
+
+.form-box input[type="text"],
+.form-box textarea {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    background-color: #0A261A;
+    border: 2px solid #1E6B42;
+    border-radius: 5px;
+    color: #E9FCE8;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 0 8px #32FF7F20 inset;
+}
+
+.form-box input[type="text"]:focus,
+.form-box textarea:focus {
+    border-color: #5EFF92;
+    box-shadow: 0 0 10px #5EFF9250;
+}
+
+.form-box input[type="submit"] {
+    margin-top: 22px;
+    padding: 10px 18px;
+    width: 100%;
+    background-color: #1E6B42;
+    border: 2px solid #5EFF92;
+    color: #E9FDEB;
+    border-radius: 6px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.25s ease-out;
+    position: relative;
+}
+
+.form-box input[type="submit"]::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    width: 7px;
+    height: 7px;
+    background: #5EFF92;
+    border-radius: 2px;
+}
+
+.form-box input[type="submit"]:hover {
+    background-color: #298A56;
+    border-color: #7AFFA3;
+    transform: scale(1.03);
+    box-shadow: 0 0 14px #5EFF9288;
+}
+
+.sucesso-msg {
+    background-color: #0F3F2A;           
+    color: #5EFF92;                         
+    border: 2px solid #1E6B42;              
+    padding: 15px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin: 25px 0;
+    box-shadow: 0 0 12px #32FF7F30;         
+    position: relative;
+}
+
+
+.botao-voltar {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #1E6B42;
+    color: #E9FDEB;
+    border: 2px solid #5EFF92;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.25s ease-out;
+}
+
+.botao-voltar::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 7px;
+    height: 7px;
+    background: #5EFF92;
+    border-radius: 2px;
+}
+
+.botao-voltar:hover {
+    background-color: #298A56;
+    border-color: #7AFFA3;
+    transform: scale(1.04);
+    box-shadow: 0 0 14px #5EFF9288;
+}
