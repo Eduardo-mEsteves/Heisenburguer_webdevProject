@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="heisenburguer.css">
+
 <?php
 
     require_once 'config.inc.php';
