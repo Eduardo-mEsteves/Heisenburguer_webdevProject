@@ -3,15 +3,22 @@
 <?php
     require "config.inc.php";
 
-    echo "<p><a class='botao-add' href='?pg=cardapio-form'>Adicionar item ao cardapio</a></p>";
-    echo "<h2>Cardápio</h2>";
+    echo "<div class='cardapio-topo'>";  
+
+        echo "<p><a class='botao-add' href='?pg=cardapio-form'>Adicionar item ao cardapio</a></p>";
+        echo "<h1>Cardápio</h1>";
+
+    echo "</div>";
 
     $sql = "SELECT * FROM receita";
     $resultado = mysqli_query($conexao, $sql);
 
+    echo "<div class='container'>";
+
     while ($dados = mysqli_fetch_array($resultado)) {
 
         echo "<div class='item'>";
+
             echo "<p><strong>Nome:</strong> " . $dados['nome'] . "</p>";
             echo "<p><strong>Preço:</strong> R$ " . $dados['preco'] . "</p>";
 
@@ -23,5 +30,7 @@
                 echo "<a href='?pg=item-excluir&id={$dados['id']}'>Excluir</a>";
             echo "</div>";
 
-        echo "</div>";
+        echo "</div>";  
     }
+
+    echo "</div>";

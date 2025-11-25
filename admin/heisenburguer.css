@@ -1,6 +1,8 @@
 html {
-    background-color: #F2E3B3;  
-    overflow-x: hidden;
+    background-color: #0A261A;
+    background-image: radial-gradient(#32FF7F20 1px, transparent 1px);
+    background-size: 6px 6px;
+    align-items: center;
 }
 
 body {
@@ -39,22 +41,118 @@ h1::before {
     opacity: 0.95;
 }
 
-h1:hover {
-    transform: scale(1.04);
-    transition: 0.2s ease-out;
-    box-shadow: 0 0 15px #5EFF92aa;
+.logo {
+    border-radius: 30px;
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 6px solid #0A261A;   
+    border-radius: 12px;          
+    box-shadow: 0 0 12px #32FF7F60, 0 0 20px #32FF7F30;
+}
+
+.imagem1 {
+    width: 96%;
+    padding-left: 20px;
+    border-radius: 12px;          
+}
+
+.direita {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  
+}
+
+.frase-de-efeito {
+    color: #E9FDEB;
+    font-style: italic;
+    margin-bottom: 30px;
+    size-adjust: 50%;
+}
+
+.quem-somos {
+    color: #E9FDEB;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.blocoA {
+    align-items: center; 
+    gap: 20px;           
+    margin: 20px 0;
+}
+
+.blocoA img {
+    width: 500px;      
+    height: auto;
+    border-radius: 30px; 
+    padding-bottom: 15px;
+}
+
+.blocoA p {
+    flex: 1;         
+    margin: 0;
+}
+
+
+.blocoB {
+    display: flex;
+    align-items: center; 
+    gap: 20px;           
+    margin: 20px 0;
+}
+
+.blocoB img {
+    width: 500px;      
+    height: auto;
+    border-radius: 30px; 
+    padding-bottom: 15px;
+}
+
+.blocoB p {
+    flex: 1;          
+    margin: 0;
+}
+
+.topo {
+    text-align: center;        
+    width: 100%;
+}
+
+.cardapio-topo {
+    text-align: center;         
+    width: 100%;
+    max-width: 600px;           
+    margin: 0 auto;
+}
+
+.cardapio-topo p,
+.cardapio-topo h2 {
+    margin: 10px 0;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: center;  
+    gap: 20px;
 }
 
 .menu {
     padding: 15px 0;
+    font-size: 30px;
 }
 
 .menu ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
-    gap: 18px;
+    justify-content: center;  
+    gap: 20px;
 }
 
 .menu a {
@@ -132,6 +230,23 @@ h1:hover {
     margin-bottom: 22px;
     position: relative;
     box-shadow: 0 0 12px #32FF7F20;
+    font-size: 2.8vh;
+    width: calc(50% - 10px);  
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;         
+}
+
+.item blockquote {
+    margin: 12px 0;
+    padding: 8px 12px;
+    color: #CFFFE0;
+    font-style: italic;
+    border-left: 3px solid #5EFF92;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    text-align: center; 
 }
 
 .item::before {
