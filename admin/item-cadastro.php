@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($inserir) {
             echo "<h2 class='sucesso-msg'>Seu item foi adicionado com sucesso!</h2>";
+            echo "<img src='imagens/deserto.jpeg' class='imagem-alt'>";
             echo "<a class='botao-voltar' href='?pg=cardapio'>Voltar</a>";
         } else {
             echo "<h2>Erro ao cadastrar item.</h2>";

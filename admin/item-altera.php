@@ -12,6 +12,7 @@
 
     if($resultado = mysqli_query($conexao, $sql)){
         echo "<div class='sucesso-msg'><h2>Item alterado com sucesso!</h2></div>";
+        echo "<img src='imagens/epico.jpeg' class='imagem-alt'>";
         echo "<a href='?pg=cardapio' class='botao-voltar'>Voltar</a>";
     } else {
         echo "<div class='sucesso-msg'><h2>Erro ao alterar item!</h2></div>";

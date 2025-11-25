@@ -40,7 +40,7 @@ Combinamos a precisão científica na escolha dos ingredientes com a arte bruta 
 
         <div class="blocoB">
             <img src="imagens/deserto.jpeg">
-            <p>LAté quem constrói um império precisa de uma pausa para o almoço.
+            <p>Até quem constrói um império precisa de uma pausa para o almoço.
 
 Nós sabemos que a rotina pode ser pesada, seja negociando territórios ou apenas sobrevivendo à segunda-feira. Por isso, criamos um ambiente onde a única "pressão" é a do queijo derretendo sobre a carne. Nossos sócios e parceiros sabem: quando a fome bate, os negócios esperam. Aqui, o cliente é quem manda e o respeito pela receita é absoluto. Junte sua equipe, estacione o trailer (ou o carro) e venha provar o que realmente importa.</p>
         </div>
