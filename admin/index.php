@@ -1,4 +1,22 @@
-<link rel="stylesheet" href="heisenburguer.css"> 
+<?php
+// index.php
+
+// =======================================================
+// 1. CONFIGURAÇÃO E INCLUSÃO DE FUNÇÕES (CORREÇÃO DE ERRO)
+// Este deve ser o primeiro código executável para definir cliente_logado()
+// =======================================================
+require_once 'config.inc.php'; 
+?>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Heisenburguer - O Sabor É Nosso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="heisenburguer.css">
+</head>
+<body>
 
 <div class="topo">
     <?php
@@ -8,15 +26,52 @@
     <nav class="menu">
         <ul>
             <li><a href="index.php">Início</a></li>
-            <li><a href="?pg=cardapio">Cardápio</a></li>
+            
+            <?php if (cliente_logado()): ?>
+                <li><a href="?pg=comprar">Fazer Pedido</a></li>
+                <li><a href="?pg=contatoadmin">Falar com Admin</a></li>
+                <li><a href="?pg=logout">Sair</a></li>
+            <?php else: ?>
+                <li><a href="?pg=cardapio">Cardápio (Gerenciar)</a></li>
+                <li><a href="?pg=login">Login</a></li>
+                <li><a href="?pg=cadastro">Cadastrar</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </div>
 
-<br>
+<main class="conteudo">
 
 <?php
-if (!isset($_GET['pg']) || $_GET['pg'] == 'inicio') {
+// =======================================================
+// 3. LÓGICA DE ROTEAMENTO (SWITCH)
+// =======================================================
+if (isset($_GET['pg'])) {
+    $pagina = $_GET['pg'];
+
+    switch ($pagina) {
+        
+        // --- ROTAS DE ADMIN ORIGINAIS ---
+        case 'cardapio':         require 'cardapio.php'; break;
+        case 'cardapio-form':    require 'cardapio-form.php'; break;
+        case 'item-cadastro':    require 'item-cadastro.php'; break;
+        case 'item-altera-form': require 'item-altera-form.php'; break;
+        case 'item-altera':      require 'item-altera.php'; break;
+        case 'item-excluir':     require 'item-excluir.php'; break;
+
+        // --- NOVAS ROTAS DO CLIENTE ---
+        case 'login':            require 'login.php'; break;
+        case 'cadastro':         require 'cadastro.php'; break;
+        case 'comprar':          require 'comprar.php'; break;
+        case 'contatoadmin':     require 'contatoadmin.php'; break;
+        case 'logout':           require 'logout.php'; break;
+
+        default:
+            echo "<h2>Página não encontrada!</h2>";
+            break;
+    }
+} else {
+    // 4. CONTEÚDO DA PÁGINA INICIAL (QUANDO NÃO HÁ ROTA ESPECIFICADA)
 ?>
     <div class="frase-de-efeito">
         <h1>"Eu não quero hamburguer, skyler..."</h1>
@@ -42,8 +97,8 @@ Combinamos a precisão científica na escolha dos ingredientes com a arte bruta 
             <img src="imagens/deserto.jpeg">
             <p>Até quem constrói um império precisa de uma pausa para o almoço.
 
-Nós sabemos que a rotina pode ser pesada, seja negociando territórios ou apenas sobrevivendo à segunda-feira. Por isso, criamos um ambiente onde a única "pressão" é a do queijo derretendo sobre a carne. Nossos sócios e parceiros sabem: quando a fome bate, os negócios esperam. Aqui, o cliente é quem manda e o respeito pela receita é absoluto. Junte sua equipe, estacione o trailer (ou o carro) e venha provar o que realmente importa.</p>
-        </div>
+Nós sabemos que a rotina pode ser pesada, seja negociando territórios ou apenas sobrevivendo à segunda-feira. Por isso, criamos um ambiente onde a única "pressão" é a do queijo derretendo sobre a carne. Nossos sócios e parceiros sabem: quando a fome bate, os negócios esperam. Aqui, o cliente é quem manda e o respeito pela receita é absoluto. Junte sua equipe, estacione o trailer (ou o carro) e venha provar o que realmente importa.  </p>
+    </div>
 
         <div class="blocoB">
             <p>A Química do Sabor: Respeite a pureza dos ingredientes.
@@ -59,38 +114,11 @@ Esqueça o amadorismo. Nossa cozinha é o nosso laboratório. Cada ingrediente �
 }
 ?>
 
-<?php
-if (isset($_GET['pg'])) {
-    $pagina = $_GET['pg'];
+</main>
 
-    switch ($pagina) {
-        case 'cardapio':
-            require 'cardapio.php';
-            break;
+<footer>
+    <p>&copy; 2025 Heisenburguer. Todos os direitos reservados.</p>
+</footer>
 
-        case 'cardapio-form':
-            require 'cardapio-form.php';
-            break;
-
-        case 'item-cadastro':
-            require 'item-cadastro.php';
-            break;
-
-        case 'item-altera':
-            require 'item-altera.php';
-            break;
-
-        case 'item-altera-form':
-            require 'item-altera-form.php';
-            break;
-
-        case 'item-excluir':
-            require 'item-excluir.php';
-            break;
-
-        default:
-            echo "<h2>Página não encontrada!</h2>";
-            break;
-    }
-} 
-?>
+</body>
+</html>

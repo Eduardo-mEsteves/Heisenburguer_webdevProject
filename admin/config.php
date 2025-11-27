@@ -1,40 +1,33 @@
 <?php
-// config.inc.php
-
 // =======================================================
 // CONFIGURAÇÃO GLOBAL E CONEXÃO COM O BANCO DE DADOS
 // =======================================================
 
-// 1. Iniciar sessão (essencial para as variáveis $_SESSION)
+// 1. Iniciar sessão sempre (MANTIDO)
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// 2. Conexão MySQLi
+// 2. Conexão MySQLi (ADICIONADO - Padrão Admin)
 $conexao = mysqli_connect("localhost", "root", "");
 $db = mysqli_select_db($conexao, "cardapioberg");
 
-// Checagem de erro de conexão (opcional, mas bom para debug)
-if (!$conexao) {
-    die("Erro na conexão com o banco de dados: " . mysqli_connect_error());
-}
-
-
 // =======================================================
-// FUNÇÕES DE AUTENTICAÇÃO E SESSÃO
+// FUNÇÕES DE AUTENTICAÇÃO E SESSÃO (MANTIDAS)
 // =======================================================
 
 /**
  * Verifica se o cliente está logado.
+ * Retorna true se houver 'cliente_id' na sessão.
  */
 function cliente_logado() {
-    // A função retorna TRUE se a variável de sessão 'cliente_id' estiver definida.
-    return isset($_SESSION['cliente_id']); 
+    return isset($_SESSION['cliente_id']);
 }
 
 
 /**
  * Exige que o cliente esteja logado para acessar a página.
+ * Redireciona para a página de login caso não esteja logado.
  */
 function exigir_login() {
     if (!cliente_logado()) {

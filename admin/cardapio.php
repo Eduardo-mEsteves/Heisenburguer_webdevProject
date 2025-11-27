@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="heisenburguer.css">
 
 <?php
-    require "config.inc.php";
+    require_once "config.inc.php";
 
     echo "<div class='cardapio-topo'>";
 
