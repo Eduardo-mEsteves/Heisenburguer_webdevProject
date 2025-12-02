@@ -1,0 +1,31 @@
+TABELA DE ITEM
+
+CREATE TABLE receita (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10, 2),
+    ingredientes TEXT
+);
+
+TABELA DE USUARIOS
+
+-- Tabela de Clientes para Login e Dados Pessoais 
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL, -- O VARCHAR(255) é crucial para senhas criptografadas
+    telefone VARCHAR(15),
+    endereco TEXT,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de Pedidos para o Histórico (não usado)
+CREATE TABLE pedidos (
+    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
+    valor_total DECIMAL(10, 2) NOT NULL,
+    status ENUM('pendente', 'em preparo', 'a caminho', 'entregue', 'cancelado') DEFAULT 'pendente',
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
